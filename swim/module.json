@@ -6,7 +6,7 @@
     "minimum": 12,
     "verified": "12.0"
   },
-  "version": "2.6.1",
+  "version": "2.7.0",
   "authors": [
     {
       "name": "SalieriC",
@@ -150,53 +150,4 @@
       "module": "swim",
       "type": "Actor",
       "ownership": {
-        "PLAYER": "NONE",
-        "ASSISTANT": "OWNER"
-      },
-      "banner": "modules/swim/assets/banner.webp"
-    },
-    {
-      "label": "SWIM Chase Cards",
-      "name": "swim-chase-cards",
-      "path": "packs/swim-chase-cards.db",
-      "system": "swade",
-      "module": "swim",
-      "type": "JournalEntry",
-      "ownership": {
-        "PLAYER": "NONE",
-        "ASSISTANT": "OWNER"
-      },
-      "banner": "modules/swim/assets/banner.webp"
-    },
-    {
-      "label": "SWIM Roll Tables",
-      "name": "swim-roll-tables",
-      "path": "packs/swim-roll-tables.db",
-      "system": "swade",
-      "module": "swim",
-      "type": "RollTable",
-      "ownership": {
-        "PLAYER": "NONE",
-        "ASSISTANT": "OWNER"
-      },
-      "banner": "modules/swim/assets/banner.webp"
-    }
-  ],
-  "packFolders": [
-    {
-      "name": "SWIM",
-      "sorting": "a",
-      "color": "#0BA0BA",
-      "packs": [
-        "swade-immersive-macros",
-        "chase-layouts",
-        "swim-actor-folders",
-        "swim-chase-cards",
-        "swim-roll-tables"
-      ]
-    }
-  ],
-  "url": "https://github.com/SalieriC/SWADE-Immersive-Macros",
-  "manifest": "https://raw.githubusercontent.com/SalieriC/SWADE-Immersive-Macros/main/swim/module.json",
-  "download": "https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/swim.zip?raw=true"
-}
+        "PLAYER":
