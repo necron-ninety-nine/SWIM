@@ -1,0 +1,10 @@
+# Don’t include these when you run `git archive`
+tests/**              export-ignore
+.github/**            export-ignore
+.vscode/**            export-ignore
+*.map                 export-ignore
+*.lock                export-ignore
+.gitignore            export-ignore
+.gitattributes        export-ignore
+README.md             export-ignore
+# add anything else—docs/, scripts/, examples/—you don’t want in the ZIP
