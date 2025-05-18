@@ -1,12 +1,12 @@
 {
   "id": "swim",
   "title": "SWADE Immersion Module",
-  "description": "<p>A module providing immersion friendly macro…<a href='https://ko-fi.com/salieric'>Please consider donating.</a></p>",
+  "description": "<p>A module providing immersion friendly macros and functionalities to enhance the gameplay experience of the SWADE System on Foundry VTT and automate some things in a non-intrusive way. <a href='https://ko-fi.com/salieric'>Please consider donating.</a></p>",
   "compatibility": {
     "minimum": 12,
     "verified": "12"
   },
-  "version": "3.0.0",
+  "version": "2.7.0",
   "authors": [
     {
       "name": "SalieriC",
@@ -15,38 +15,13 @@
       "ko-fi": "SalieriC"
     }
   ],
-  "packs": [
-    {
-      "label": "Templates",
-      "name": "swim-templates",
-      "path": "packs/swim-templates.db",
-      "system": "swade",
-      "module": "swim",
-      "type": "Compendium",
-      "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" },
-      "banner": "modules/swim/assets/banner.webp"
-    },
-    {
-      "label": "SWIM Actor Folders",
-      "name": "swim-actor-folders",
-      "path": "packs/swim-actor-folders.db",
-      "system": "swade",
-      "module": "swim",
-      "type": "Actor",
-      "ownership": { "PLAYER": "LIMITED", "ASSISTANT": "OWNER" },
-      "banner": "modules/swim/assets/banner.webp"
-    },
-    {
-      "name": "chase-layouts",
-      "label": "Chase Layouts",
-      "system": "swade",
-      "path": "packs/chase-layouts.db",
-      "module": "swim",
-      "type": "Scene",
-      "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" },
-      "banner": "modules/swim/assets/banner.webp"
-    }
+  "languages": [
+    { "lang": "en",   "name": "English",             "path": "lang/en.json"    },
+    { "lang": "de",   "name": "Deutsch",             "path": "lang/de.json"    },
+    { "lang": "zh-Hans","name": "中文（简体）",      "path": "lang/zh_Hans.json" },
+    { "lang": "pt-BR","name": "Português (Brasil)",  "path": "lang/pt_BR.json" }
   ],
+  "systems": [ "swade" ],
   "relationships": {
     "systems": [
       {
@@ -84,26 +59,79 @@
       {
         "id": "portal-lib",
         "type": "module",
-        "manifest": "https://github.com/theripper93/portal-lib/releases/download/2.2.18/module.json",
-        "compatibility": { "minimum": "2.2.18", "verified": "12" }
-      },
-      {
-        "id": "swade-shape-changer",
-        "type": "module",
-        "manifest": "https://raw.githubusercontent.com/ddbrown30/swade-shape-changer/main/module.json",
-        "compatibility": { "minimum": "1.0.0", "verified": "1.0.0" }
+        "manifest": "https://foundryvtt.com/packages/portal-lib",
+        "compatibility": { "minimum": "2.2.18", "verified": "2.2.18" }
       }
     ]
   },
-  "esmodules": [
-    "src/module.js",
-    "src/macro-summoner.js",
-    "src/macro-shapechanger.js",
-    "src/other-macros.js"
+  "esmodules": [ "./scripts/init.js" ],
+  "packs": [
+    {
+      "name": "swade-immersive-macros",
+      "label": "SWADE Immersive Macros",
+      "system": "swade",
+      "path": "packs/swade-immersive-macros.db",
+      "module": "swim",
+      "type": "Macro",
+      "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" },
+      "banner": "modules/swim/assets/banner.webp"
+    },
+    {
+      "name": "chase-layouts",
+      "label": "Chase Layouts",
+      "system": "swade",
+      "path": "packs/chase-layouts.db",
+      "module": "swim",
+      "type": "Scene",
+      "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" },
+      "banner": "modules/swim/assets/banner.webp"
+    },
+    {
+      "name": "swim-actor-folders",
+      "label": "SWIM Actor Folders",
+      "system": "swade",
+      "path": "packs/swim-actor-folders.db",
+      "module": "swim",
+      "type": "Actor",
+      "ownership": { "PLAYER": "LIMITED", "ASSISTANT": "OWNER" },
+      "banner": "modules/swim/assets/banner.webp"
+    },
+    {
+      "name": "swim-chase-cards",
+      "label": "SWIM Chase Cards",
+      "system": "swade",
+      "path": "packs/swim-chase-cards.db",
+      "module": "swim",
+      "type": "JournalEntry",
+      "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" },
+      "banner": "modules/swim/assets/banner.webp"
+    },
+    {
+      "name": "swim-roll-tables",
+      "label": "SWIM Roll Tables",
+      "system": "swade",
+      "path": "packs/swim-roll-tables.db",
+      "module": "swim",
+      "type": "RollTable",
+      "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" },
+      "banner": "modules/swim/assets/banner.webp"
+    }
   ],
-  "styles": ["styles/swim.css"],
-  "socket": "module.swim",
+  "packFolders": [
+    {
+      "name": "SWIM",
+      "sorting": "a",
+      "color": "#0BA0BA",
+      "packs": [
+        "swade-immersive-macros",
+        "chase-layouts",
+        "swim-actor-folders",
+        "swim-chase-cards",
+        "swim-roll-tables"
+      ]
+    }
+  ],
+  "url": "https://github.com/necron-ninety-nine/SWIM",
   "manifest": "https://raw.githubusercontent.com/necron-ninety-nine/SWIM/main/module.json",
-  "download": "https://github.com/necron-ninety-nine/SWIM/archive/refs/heads/main.zip",
-  "keywords": ["swade", "immersion", "macro", "summon", "shapechange"]
+  "download": "https://github.com/necron-ninety-nine/SWIM/archive/refs/heads/main.zip"
 }
